@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Socorro Deus'),
+        title: const Text('Socorro Deus'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                 height: 40,
                 width: 40,
                 color: Colors.blue,
-                child: Text('oi'),
+                child: const Text('oi'),
               ),
               Container(
                 height: 40,
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           ElevatedButton(
-            child: Text('data'),
+            child: const Text('data'),
             onPressed: () => showDatePicker(
               context: context,
               initialDate: DateTime.now(),
@@ -55,6 +55,39 @@ class _HomePageState extends State<HomePage> {
               lastDate: DateTime.now(),
             ),
           ),
+          SizedBox(
+            width: 240,
+            child: Card(
+              color: Colors.indigo,
+              elevation: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Card bonito',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)),
+                    ),
+                    const Divider(),
+                    const Text('Você deseja ser bonito ?',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.normal)),
+                    const SizedBox(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        OutlinedButton(onPressed: () {}, child: Text('Não')),
+                        ElevatedButton(onPressed: () {}, child: Text('Sim'))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
